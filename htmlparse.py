@@ -5,7 +5,7 @@ import argparse
 
 
 def simpan(user, tanggal, waktu, detail, jenis, staff, pendapatan):
-    pool = PersistentDB(MySQLdb, host='103.229.72.65', user='k8033228_noname', passwd='', db='k8033228_tekonet')
+    pool = PersistentDB(MySQLdb, host='103.229.72.65', user='k8033228_noname', passwd='D4didudadu', db='k8033228_tekonet')
     connection = pool.connection()
     cursor = connection.cursor(MySQLdb.cursors.DictCursor)
     try:
@@ -59,8 +59,8 @@ for i in data:
         else:
             if cek(tanggal, waktu) == 0:
                 simpan(user, tanggal, waktu, jenis, detail, staff, pendapatan)
-                print 'data di tambah'
+                print 'data di tambah',tanggal
             else:
-                print 'sudah ada'
+                print 'sudah ada data', tanggal
     except:
         pass
