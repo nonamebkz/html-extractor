@@ -5,7 +5,7 @@ import argparse
 
 
 def simpan(user, tanggal, waktu, detail, jenis, staff, pendapatan):
-    pool = PersistentDB(MySQLdb, host='103.229.72.65', user='k8033228_noname', passwd='D4didudadu', db='k8033228_tekonet')
+    pool = PersistentDB(MySQLdb, host='*host', user='*username', passwd='*password', db='*dbname')
     connection = pool.connection()
     cursor = connection.cursor(MySQLdb.cursors.DictCursor)
     try:
@@ -22,7 +22,7 @@ def simpan(user, tanggal, waktu, detail, jenis, staff, pendapatan):
 
 
 def cek(tanggal, waktu):
-    dbmysql = MySQLdb.connect(host='103.229.72.65', user='k8033228_noname', passwd='D4didudadu', db='k8033228_tekonet')
+    dbmysql = MySQLdb.connect(host='*host', user='*username', passwd='*password', db='*dbname')
     cur = dbmysql.cursor()
     cur.execute("SELECT tanggal, waktu FROM pemasukan WHERE tanggal='{}' and waktu='{}'".format(tanggal, waktu))
     return cur.rowcount
